@@ -17,12 +17,12 @@
  
 ***The group proposed the following:***
   1. Develop and deliver a backend solution in pyhton;
-  2. Using micro-services to facilitate the integration in Vakinha archtecture;
+  2. Using micro-services to facilitate the integration in Vakinha architecture;
   3. Cloud hostage;
   4. User oriented solution;
   
 #### Architecture sketch:
-![First Archteture sketch(04/19/2019)](https://github.com/AugustoKlaic/IntegradoraII/blob/master/miscelaneous/Arch_prototype.PNG)
+![First Architeture sketch(04/19/2019)](https://github.com/AugustoKlaic/IntegradoraII/blob/master/miscelaneous/Arch_prototype.PNG)
 
 #### Our sprint planning
 |Sprint 1|Sprint 2|Sprint 3|Sprint 4|
