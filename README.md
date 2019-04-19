@@ -22,5 +22,4 @@
   4. User oriented solution;
   
   #### Architecture sketch:
-  
-  
+  ![First Archteture sketch(04/19/2019)](https://github.com/AugustoKlaic/IntegradoraII/blob/master/miscelaneous/Arch_prototype.PNG)
