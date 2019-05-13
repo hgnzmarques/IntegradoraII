@@ -24,6 +24,11 @@
 #### Architecture sketch:
 ![First Architeture sketch(04/19/2019)](https://github.com/AugustoKlaic/IntegradoraII/blob/master/miscelaneous/Arch_prototype.PNG)
 
+#### How to see DataBase Structure & Infos:
+  1. Git clone the project or with you already have cloned just pull the modifications;
+  2. Go to the folder that you saved the changes or pulled the changes;
+  3. Open/run the index.html file with a browser to navigate through the databse Info;
+
 #### Our sprint planning
 |Sprint 1|Sprint 2|Sprint 3|Sprint 4|
 |--------|--------|--------|--------|
