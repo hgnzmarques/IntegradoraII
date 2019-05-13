@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<database name="INTEGRADORA" schema="public" type="PostgreSQL - 11.2">
+   <tables>
+      <table name="contributions" numRows="1129885" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('contributions_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="status" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="2" name="vakinha_id" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="3" name="user_id" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="4" name="value" nullable="true" remarks="" size="131089" type="numeric"/>
+         <column autoUpdated="false" digits="0" id="5" name="number" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="6" name="payment_tid" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="6" id="7" name="created_at" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="6" id="8" name="updated_at" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="9" name="payment_method" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="10" name="card_payments" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="11" name="doc_barcode" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="12" name="message" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="13" name="card_operator" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" defaultValue="6.4" digits="0" id="14" name="tax" nullable="true" remarks="" size="131089" type="numeric"/>
+         <column autoUpdated="false" digits="0" id="15" name="recipient_id" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" defaultValue="0.5" digits="0" id="16" name="transaction_tax" nullable="true" remarks="" size="131089" type="numeric"/>
+         <column autoUpdated="false" digits="0" id="17" name="source" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="18" name="verified" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="19" name="quarentine" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="20" name="notes" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="21" name="anonymous" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="22" name="utm_medium" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="23" name="utm_campaign" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="24" name="utm_term" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="25" name="utm_content" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="6" id="26" name="available_date" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="27" name="processed_by" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="28" name="cost_tax" nullable="true" remarks="" size="131089" type="numeric"/>
+         <column autoUpdated="false" digits="0" id="29" name="cost_fee" nullable="true" remarks="" size="131089" type="numeric"/>
+         <column autoUpdated="false" digits="0" id="30" name="payer_type" nullable="true" remarks="" size="2" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="31" name="transferred_from_id" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="32" name="transferred_to_id" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="33" name="approval_date" nullable="true" remarks="" size="13" type="date"/>
+         <column autoUpdated="false" digits="0" id="34" name="cancellation_date" nullable="true" remarks="" size="13" type="date"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="35" name="invoice_emitted" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="36" name="login_type_cd" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="37" name="nfe_id" nullable="true" remarks="" size="10" type="int4"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="contributions_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="i_transf_from" unique="false">
+            <column ascending="true" name="transferred_from_id"/>
+         </index>
+         <index name="i_transf_to" unique="false">
+            <column ascending="true" name="transferred_to_id"/>
+         </index>
+         <index name="index_contributions_on_status" unique="false">
+            <column ascending="true" name="status"/>
+         </index>
+         <index name="index_contributions_on_user_id" unique="false">
+            <column ascending="true" name="user_id"/>
+         </index>
+         <index name="index_contributions_on_vakinha_id" unique="false">
+            <column ascending="true" name="vakinha_id"/>
+         </index>
+      </table>
+      <table name="pg_stat_statements" numRows="0" remarks="" schema="public" type="VIEW" viewSql=" SELECT pg_stat_statements.userid,&#10;    pg_stat_statements.dbid,&#10;    pg_stat_statements.queryid,&#10;    pg_stat_statements.query,&#10;    pg_stat_statements.calls,&#10;    pg_stat_statements.total_time,&#10;    pg_stat_statements.min_time,&#10;    pg_stat_statements.max_time,&#10;    pg_stat_statements.mean_time,&#10;    pg_stat_statements.stddev_time,&#10;    pg_stat_statements.rows,&#10;    pg_stat_statements.shared_blks_hit,&#10;    pg_stat_statements.shared_blks_read,&#10;    pg_stat_statements.shared_blks_dirtied,&#10;    pg_stat_statements.shared_blks_written,&#10;    pg_stat_statements.local_blks_hit,&#10;    pg_stat_statements.local_blks_read,&#10;    pg_stat_statements.local_blks_dirtied,&#10;    pg_stat_statements.local_blks_written,&#10;    pg_stat_statements.temp_blks_read,&#10;    pg_stat_statements.temp_blks_written,&#10;    pg_stat_statements.blk_read_time,&#10;    pg_stat_statements.blk_write_time&#10;   FROM pg_stat_statements(true) pg_stat_statements(userid, dbid, queryid, query, calls, total_time, min_time, max_time, mean_time, stddev_time, rows, shared_blks_hit, shared_blks_read, shared_blks_dirtied, shared_blks_written, local_blks_hit, local_blks_read, local_blks_dirtied, local_blks_written, temp_blks_read, temp_blks_written, blk_read_time, blk_write_time);">
+         <column autoUpdated="false" digits="0" id="0" name="userid" nullable="true" remarks="" size="10" type="oid"/>
+         <column autoUpdated="false" digits="0" id="1" name="dbid" nullable="true" remarks="" size="10" type="oid"/>
+         <column autoUpdated="false" digits="0" id="2" name="queryid" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="3" name="query" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="4" name="calls" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="17" id="5" name="total_time" nullable="true" remarks="" size="17" type="float8"/>
+         <column autoUpdated="false" digits="17" id="6" name="min_time" nullable="true" remarks="" size="17" type="float8"/>
+         <column autoUpdated="false" digits="17" id="7" name="max_time" nullable="true" remarks="" size="17" type="float8"/>
+         <column autoUpdated="false" digits="17" id="8" name="mean_time" nullable="true" remarks="" size="17" type="float8"/>
+         <column autoUpdated="false" digits="17" id="9" name="stddev_time" nullable="true" remarks="" size="17" type="float8"/>
+         <column autoUpdated="false" digits="0" id="10" name="rows" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="11" name="shared_blks_hit" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="12" name="shared_blks_read" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="13" name="shared_blks_dirtied" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="14" name="shared_blks_written" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="15" name="local_blks_hit" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="16" name="local_blks_read" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="17" name="local_blks_dirtied" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="18" name="local_blks_written" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="19" name="temp_blks_read" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="20" name="temp_blks_written" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="17" id="21" name="blk_read_time" nullable="true" remarks="" size="17" type="float8"/>
+         <column autoUpdated="false" digits="17" id="22" name="blk_write_time" nullable="true" remarks="" size="17" type="float8"/>
+      </table>
+      <table name="users" numRows="1111700" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('users_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="reset_password_token" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="6" id="2" name="reset_password_sent_at" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="6" id="3" name="remember_created_at" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="4" name="sign_in_count" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="6" id="5" name="current_sign_in_at" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="6" id="6" name="last_sign_in_at" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="6" id="7" name="created_at" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="6" id="8" name="updated_at" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="9" name="provider" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="10" name="birth" nullable="true" remarks="" size="13" type="date"/>
+         <column autoUpdated="false" digits="0" id="11" name="state" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="12" name="city" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" defaultValue="2" digits="0" id="13" name="status" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="14" name="verified" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="15" name="old_balance" nullable="true" remarks="" size="131089" type="numeric"/>
+         <column autoUpdated="false" digits="0" id="16" name="old_id" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="17" name="source" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="18" name="accepted_new_terms" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="19" name="comments" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="20" name="score" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="21" name="utm_medium" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="22" name="utm_campaign" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="23" name="utm_term" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="24" name="utm_content" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="25" name="accepted_newer_terms" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="26" name="confirmation_token" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="6" id="27" name="confirmed_at" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="6" id="28" name="confirmation_sent_at" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="29" name="suspect" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="30" name="cnpj_allowed" nullable="true" remarks="" size="1" type="bool"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="users_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="index_users_on_reset_password_token" unique="true">
+            <column ascending="true" name="reset_password_token"/>
+         </index>
+      </table>
+      <table name="vakinhas" numRows="248120" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('vakinhas_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="title" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="goal" nullable="true" remarks="" size="131089" type="numeric"/>
+         <column autoUpdated="false" digits="0" id="3" name="short_description" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="4" name="description" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="5" name="ending_date" nullable="true" remarks="" size="13" type="date"/>
+         <column autoUpdated="false" digits="0" id="6" name="slug" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="6" id="7" name="created_at" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="6" id="8" name="updated_at" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="9" name="user_id" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="10" name="purpose" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="11" name="image" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" defaultValue="2" digits="0" id="12" name="status" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="13" name="impressions_count" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="14" name="highlighted" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="15" name="affiliated_id" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="16" name="additional_value" nullable="true" remarks="" size="131089" type="numeric"/>
+         <column autoUpdated="false" digits="0" id="17" name="video" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="18" name="category_id" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="19" name="source" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="20" name="search" nullable="true" remarks="" size="2147483647" type="tsvector"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="21" name="recurring" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="22" name="intl_payment" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="23" name="has_duplicated_payments" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="24" name="template" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="25" name="utm_medium" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="26" name="utm_campaign" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="27" name="utm_term" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="28" name="utm_content" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="29" name="allow_deposits" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="30" name="short_url" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="31" name="allow_bitcoin" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="32" name="downlighted" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="33" name="complaint_counter" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="34" name="last_complaint_date" nullable="true" remarks="" size="13" type="date"/>
+         <column autoUpdated="false" digits="0" id="35" name="page_views_count" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="36" name="page_views_fetched_at" nullable="true" remarks="" size="13" type="date"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="vakinhas_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="index_vakinhas_on_affiliated_id" unique="false">
+            <column ascending="true" name="affiliated_id"/>
+         </index>
+         <index name="index_vakinhas_on_search" unique="false">
+            <column ascending="true" name="search"/>
+         </index>
+         <index name="index_vakinhas_on_slug" unique="true">
+            <column ascending="true" name="slug"/>
+         </index>
+         <index name="index_vakinhas_on_status" unique="false">
+            <column ascending="true" name="status"/>
+         </index>
+         <index name="index_vakinhas_on_user_id" unique="false">
+            <column ascending="true" name="user_id"/>
+         </index>
+      </table>
+      <table name="withdraws" numRows="71815" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('withdraws_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="account_kind" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="bank" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="value" nullable="true" remarks="" size="131089" type="numeric"/>
+         <column autoUpdated="false" digits="0" id="4" name="user_id" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="6" id="5" name="created_at" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="6" id="6" name="updated_at" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="7" name="kind" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" defaultValue="1" digits="0" id="8" name="status" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="9" name="phone" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="10" name="phone_provider" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="11" name="tax" nullable="true" remarks="" size="131089" type="numeric"/>
+         <column autoUpdated="false" digits="0" id="12" name="contribution_id" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="13" name="pending_internal_check" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="14" name="affiliated_id" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="15" name="verified" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="16" name="verified_by" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="17" name="pin_sent" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="18" name="pin_verified" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="19" name="pin_sent_to" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="20" name="external_id" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="21" name="batch_id" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="22" name="notes" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="23" name="invoice_emitted" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="24" name="confirmation_code" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="25" name="confirmed" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="26" name="method_of_execution" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="6" id="27" name="code_expiration" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="28" name="nfe_id" nullable="true" remarks="" size="10" type="int4"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="withdraws_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="index_withdraws_on_affiliated_id" unique="false">
+            <column ascending="true" name="affiliated_id"/>
+         </index>
+         <index name="index_withdraws_on_user_id" unique="false">
+            <column ascending="true" name="user_id"/>
+         </index>
+      </table>
+   </tables>
+</database>
