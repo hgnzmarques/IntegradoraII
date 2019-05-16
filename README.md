@@ -34,6 +34,6 @@
 |--------|--------|--------|--------|
 | 04/03/2019 * 04/17/2019 | 04/17/2019 * 05/15/2019 | 05/15/2019 * 06/12/2019 | 06/12/2019 * 06/26/2019 |
 |*`Defining technology for development`* *`Set architecture`* *`Import of data`* *`Screen Mocks`*|*`Beginning of development`* *`Alignment`* *`First set of working APIs`*|*`Development of more complex APIs`* *`Prod test`* *`MVP1`* *`Alignment`*|*`Project development`* *`Final project presentation (final MVP)`*|
-|:heavy_check_mark:|:x:|:x:|:x:|
+|:heavy_check_mark:|:heavy_check_mark:|:x:|:x:|
 
 ###### more is coming up here....
