@@ -3,13 +3,13 @@
 ###### A fictional software company
 
 #### About us & the Problem
-- We are a group of PUCRS students and we were challenged to create a fictitious software company to solve a problem of a real company. We are a group of 6 students:
+- We are a group of PUCRS students and we were challenged to create a fictitious software company to solve a problem of a real company. We are a group of 5 students:
   - Augusto Sopelsa Klaic (@AugustoKlaic)
   - Diovane Monteiro
   - Nei Cardoso
   - Henrique Marques
   - Nicolas Curco
-  - Cassiano
+  
 - We came up with the company **CATTLE+**, we are focus to solve the problem that Vakinha bring to us, that is basically take the information they already have and filter and trsnform that in a more valueable information.
 
 #### Our solution
