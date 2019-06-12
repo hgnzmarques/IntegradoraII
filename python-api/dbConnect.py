@@ -6,7 +6,7 @@ from dataclasses import dataclass, field
 DB_CONFIG = dict(
     user="admin",
     password="teste",
-    host="3.88.132.194",
+    host="3.86.187.193",
     port="5432",
     database="INTEGRADORA",
 )
