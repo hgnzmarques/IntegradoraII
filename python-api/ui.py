@@ -67,9 +67,17 @@ def views_per_day():
     plot_bar_x(days, views, title, xlabel, ylabel)
 
 
-contributions_per_value
+def total_donated_per_vaking_untill_now():
+    url = 'http://localhost:8999/vakinha-lifetime/total_donated_per_vakinha_untill_now' 
+    response = requests.get(url).content
+    data = json.loads(response)
+    print(data)
+
+
+
 if __name__ == "__main__":
     payment_methods_success_rate()
     contributions_per_value()
     pie_chart()
     views_per_day()
+    total_donated_per_vaking_untill_now()
