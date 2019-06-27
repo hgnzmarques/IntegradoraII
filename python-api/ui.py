@@ -39,7 +39,7 @@ def pie_chart(labels=None, size=None):
 
 
 def payment_methods_success_rate():
-    url = 'http://localhost:8999/vakinha-creation/payment-methods-success-rate/' 
+    url = 'http://localhost:8999/vakinha-creation/payment-methods-success-rate/'
     response = requests.get(url).content
     data = json.loads(response)
     title = 'Success rate of different payment methods.'
@@ -49,7 +49,7 @@ def payment_methods_success_rate():
 
 
 def contributions_per_value():
-    url = 'http://localhost:8999/vakinha-creation/contributions_per_value/' 
+    url = 'http://localhost:8999/vakinha-creation/contributions_per_value/'
     response = requests.get(url).content
     data = json.loads(response)
     title = 'Contributions grouped by the amount donated.'
@@ -67,17 +67,16 @@ def views_per_day():
     plot_bar_x(days, views, title, xlabel, ylabel)
 
 
-def total_donated_per_vaking_untill_now():
-    url = 'http://localhost:8999/vakinha-lifetime/total_donated_per_vakinha_untill_now' 
+def call_api(url: str):
     response = requests.get(url).content
     data = json.loads(response)
-    print(data)
-
+    print(url[url.rindex("/"):], data, sep="\n")
 
 
 if __name__ == "__main__":
-    payment_methods_success_rate()
-    contributions_per_value()
-    pie_chart()
-    views_per_day()
-    total_donated_per_vaking_untill_now()
+    # payment_methods_success_rate()
+    # contributions_per_value()
+    # pie_chart()
+    # views_per_day()
+    call_api("http://localhost:8999/vakinha-lifetime/total_donated_per_vakinha_untill_now")
+    call_api("http://localhost:8999/vakinha-lifetime/similar_vakinhas_to_the_user")

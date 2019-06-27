@@ -13,7 +13,7 @@ app = Flask(__name__)
 DB_CONFIG = dict(
     user="admin",
     password="teste",
-    host="3.86.187.193",
+    host="54.172.179.143",
     port="5432",
     database="INTEGRADORA",
 )
@@ -24,6 +24,13 @@ class Vakinha:
     _id: int
     title: str
     value: float
+
+    @classmethod
+    def from_sql(cls, _id, title, value):
+        return cls(_id, title, float(value))
+
+# @dataclass
+# class
 
 
 def run_query(query_string: str):
@@ -57,12 +64,23 @@ def contributions_per_value():
     return jsonify([values, number_of_contributions])
 
 
-@app.route('/vakinha-lifetime/total_donated_per_vakinha_untill_now', methods=['get'])
+@app.route('/vakinha-lifetime/total_donated_per_vakinha_untill_now', methods=['GET'])
 def get_total_donated_per_vakinha_untill_now():
     query = open("./queries/accumulated_vakinhas_money.sql").read()
     cursor = run_query(query)
     vakinhas = [
-        asdict(Vakinha(row[0], row[1], float(row[2])))
+        asdict(Vakinha.from_sql(*row))
+        for row in cursor
+    ]
+    return jsonify(vakinhas)
+
+
+@app.route('/vakinha-lifetime/similar_vakinhas_to_the_user', methods=['GET'])
+def similar_vakinhas_to_the_user():
+    query = open("./queries/similar_vakinhas_to_the_user.sql").read()
+    cursor = run_query(query)
+    vakinhas = [
+        asdict(Vakinha.from_sql(*row))
         for row in cursor
     ]
     return jsonify(vakinhas)
