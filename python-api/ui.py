@@ -4,14 +4,14 @@ from matplotlib import pyplot as plt
 from superjson import json
 
 
-def plot_bar_x(label, success_rate, title, xlabel, ylabel):
-    index = np.arange(len(label))
-    plt.bar(index, success_rate)
-    plt.xlabel(xlabel, fontsize=12)
-    plt.ylabel(ylabel, fontsize=12)
-    plt.xticks(index, label, fontsize=12, rotation=30)
-    plt.title(title)
-    plt.show()
+# def plot_bar_x(label, success_rate, title, xlabel, ylabel):
+#     index = np.arange(len(label))
+#     plt.bar(index, success_rate)
+#     plt.xlabel(xlabel, fontsize=12)
+#     plt.ylabel(ylabel, fontsize=12)
+#     plt.xticks(index, label, fontsize=12, rotation=30)
+#     plt.title(title)
+#     plt.show()
 
 
 # def plot_bar_y(label, success_rate, title, xlabel, ylabel):
@@ -24,47 +24,46 @@ def plot_bar_x(label, success_rate, title, xlabel, ylabel):
 #     plt.show()
 
 
-def pie_chart(labels=None, size=None):
-    labels = ['Facebook', 'WhatsApp', 'Twitter']
-    sizes = [50, 40, 10]
-    explode = (0, 0, 0)
-    fig1, ax1 = plt.subplots()
-    ax1.pie(
-        sizes, explode=explode, labels=labels, autopct='%1.1f%%',
-        shadow=True, startangle=90, colors=['blue', 'green', 'cyan']
-    )
-    plt.title('Where your referrals come from.')
-    ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-    plt.show()
+# def pie_chart(labels=None, size=None):
+#     labels = ['Facebook', 'WhatsApp', 'Twitter']
+#     sizes = [50, 40, 10]
+#     explode = (0, 0, 0)
+#     fig1, ax1 = plt.subplots()
+#     ax1.pie(
+#         sizes, explode=explode, labels=labels, autopct='%1.1f%%',
+#         shadow=True, startangle=90, colors=['blue', 'green', 'cyan']
+#     )
+#     plt.title('Where your referrals come from.')
+#     ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+#     plt.show()
+
+# def views_per_day():
+#     title = 'Number of viewers per day over the last week.'
+#     xlabel = 'Unique viewers'
+#     ylabel = 'x days ago'
+#     days = ['today', 'yesterday', '2 days ago', '3 days ago', '4 days ago', '5 days ago', '6 days ago']
+#     views = [4, 10, 8, 11, 9, 10, 8]
+#     plot_bar_x(days, views, title, xlabel, ylabel)
+
+# def payment_methods_success_rate():
+#     url = 'http://localhost:8999/vakinha-creation/payment-methods-success-rate/'
+#     response = requests.get(url).content
+#     data = json.loads(response)
+#     title = 'Success rate of different payment methods.'
+#     xlabel = 'Payment Method'
+#     ylabel = 'Success Rate %'
+#     plot_bar_x(data[0], data[1], title, xlabel, ylabel)
 
 
-def payment_methods_success_rate():
-    url = 'http://localhost:8999/vakinha-creation/payment-methods-success-rate/'
-    response = requests.get(url).content
-    data = json.loads(response)
-    title = 'Success rate of different payment methods.'
-    xlabel = 'Payment Method'
-    ylabel = 'Success Rate %'
-    plot_bar_x(data[0], data[1], title, xlabel, ylabel)
+# def contributions_per_value():
+#     url = 'http://localhost:8999/vakinha-creation/contributions_per_value/'
+#     response = requests.get(url).content
+#     data = json.loads(response)
+#     title = 'Contributions grouped by the amount donated.'
+#     xlabel = 'Amount in BRL'
+#     ylabel = 'Number of donations'
+#     plot_bar_x(data[0], data[1], title, xlabel, ylabel)
 
-
-def contributions_per_value():
-    url = 'http://localhost:8999/vakinha-creation/contributions_per_value/'
-    response = requests.get(url).content
-    data = json.loads(response)
-    title = 'Contributions grouped by the amount donated.'
-    xlabel = 'Amount in BRL'
-    ylabel = 'Number of donations'
-    plot_bar_x(data[0], data[1], title, xlabel, ylabel)
-
-
-def views_per_day():
-    title = 'Number of viewers per day over the last week.'
-    xlabel = 'Unique viewers'
-    ylabel = 'x days ago'
-    days = ['today', 'yesterday', '2 days ago', '3 days ago', '4 days ago', '5 days ago', '6 days ago']
-    views = [4, 10, 8, 11, 9, 10, 8]
-    plot_bar_x(days, views, title, xlabel, ylabel)
 
 
 def call_api(url: str):
@@ -80,3 +79,7 @@ if __name__ == "__main__":
     # views_per_day()
     call_api("http://localhost:8999/vakinha-lifetime/total_donated_per_vakinha_untill_now")
     call_api("http://localhost:8999/vakinha-lifetime/similar_vakinhas_to_the_user")
+    call_api("http://localhost:8999/vakinha-lifetime/donation_methods_approval_rate")
+    call_api("http://localhost:8999/vakinha-lifetime/networks_used_to_find_u")
+    call_api("http://localhost:8999/vakinha-lifetime/price_by_pourpose")
+
