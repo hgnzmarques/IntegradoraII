@@ -40,6 +40,8 @@
   
 - After solving all of this we had setted the databse full operational, and started the development of the SQL scripts:
     <p> Our DBA report: </p>
+      First of all, i would like to say that it was a new and different experience having to work with a PostgreSQL database. It was kind hard at some point because i was used to work with SQL Server and Oracle databases, so i had to learn a new type of SQL, the base was similar but with its own universe of writing.
+      So we begun to code the SQL scripts, we had to know what our aplicatiom would do, so i had to have a conversation with de developement team and we came to a consensus on what we were going to return from the database. Below are some of the queries we have made.
     
  ##### Showing the remote DB:
  ![example1](https://github.com/AugustoKlaic/IntegradoraII/blob/master/miscelaneous/users_and_tables.png)
