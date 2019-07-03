@@ -21,8 +21,11 @@
   3. Cloud hostage;
   4. User oriented solution;
   
-#### Architecture sketch:
+#### Planned Architecture sketch:
 ![First Architeture sketch(04/19/2019)](https://github.com/AugustoKlaic/IntegradoraII/blob/master/miscelaneous/Arch_prototype.PNG)
+
+#### Actual Architecture:
+  -> TO DO
 
 #### How to see DataBase Structure & Infos:
   1. Git clone the project or with you already have cloned just pull the modifications;
@@ -30,12 +33,12 @@
   3. Open/run the index.html file with a browser to navigate through the databse Info;
   
 #### DataBase development
-  -We received an entire dump file from vakinha to use it as datasource for our software solution. We treat the database as a priority because it might be the most important part to Vakinha. So we focus in solve all databases problems first, and we had some:
+  - We received an entire dump file from vakinha to use it as datasource for our software solution. We treat the database as a priority because it might be the most important part to Vakinha. So we focus in solve all databases problems first, and we had some:
   1. How to send the dump file to the AWS EC2 linux;
   2. How we create the database from the dump;
   3. The dump came up with all users from vakinha;
   
--After solving all of this we had setted the databse full operational, and started the development of the SQL scripts:
+- After solving all of this we had setted the databse full operational, and started the development of the SQL scripts:
     <p> Our DBA report: </p>
     
  ##### Showing the remote DB:
@@ -44,8 +47,22 @@
  
 #### API's development
   - After we solved the Database we started developing our solution in python. We made out five endpoints to return the information in JSON format. We choose JSON because it is the most popular nowadays and it is easy to see, understand and map into objects to be used before. The JSON is reusable and we tought it could be the most valuable feature that Vakinha could use with the SQLs scripts. 
+  <p>Our devs report: </p>
+ 
+![example3](https://github.com/AugustoKlaic/IntegradoraII/blob/master/miscelaneous/dev_example1.png)
+
+#### Sprints overview Abstract
+###### Sprint 1
+  - In the first sprint we made a mockup of how our system would look like. We model the interface with the information we thougt would aggregate value to the user. We put some graphics and links just to ilustrate what kind of iformation we wanted. We, from the beginning, have proposed a solution focused in backend, with almost nothing related to frontend. Because we wanted to deliver inteligence to the core business of Vakinha and let them make up the user interface with them UX, UI, design and templates.
   
+###### Sprint 2
+  - In second sprint we started the database, and focus to resolve it's problems. We created an AWS EC2 cloud to host the database. We use a framework open source to map and classify all the database for us to facilitate our work and the development of the SQL scripts.
   
+###### Sprint 3
+  - In third sprint we develop all the SQL queries that would return the info from the database, we were already using real data from the vakinha at this point. And started the development of the API's that use those scripts. At this point we hadn't made anything to the frontend. All the endpoints we had made at this point was bringing the response in JSON.
+  
+###### Sprint 4
+  - In the last sprint we finished all the API's and corrected some SQLs that was crashing in some points. We made all this documentation and the presentation for today. Frontend still a mistery KKKK
 
 #### Our sprint planning
 |Sprint 1|Sprint 2|Sprint 3|Sprint 4|
