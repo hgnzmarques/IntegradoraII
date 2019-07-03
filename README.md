@@ -28,12 +28,28 @@
   1. Git clone the project or with you already have cloned just pull the modifications;
   2. Go to the folder that you saved the changes or pulled the changes;
   3. Open/run the index.html file with a browser to navigate through the databse Info;
+  
+#### DataBase development
+  -We received an entire dump file from vakinha to use it as datasource for our software solution. We treat the database as a priority because it might be the most important part to Vakinha. So we focus in solve all databases problems first, and we had some:
+  1. How to send the dump file to the AWS EC2 linux;
+  2. How we create the database from the dump;
+  3. The dump came up with all users from vakinha;
+  
+-After solving all of this we had setted the databse full operational, and started the development of the SQL scripts:
+    <p> Our DBA report: </p>
+    
+ ##### Showing the remote DB:
+ ![example1](https://github.com/AugustoKlaic/IntegradoraII/blob/master/miscelaneous/users_and_tables.png)
+ ![example2](https://github.com/AugustoKlaic/IntegradoraII/blob/master/miscelaneous/teste_select1.png)
+ 
+#### API's development
+  - After we solved the Database we started developing our solution in python. We made out five endpoints to return the information in JSON format. We choose JSON because it is the most popular nowadays and it is easy to see, understand and map into objects to be used before. The JSON is reusable and we tought it could be the most valuable feature that Vakinha could use with the SQLs scripts. 
+  
+  
 
 #### Our sprint planning
 |Sprint 1|Sprint 2|Sprint 3|Sprint 4|
 |--------|--------|--------|--------|
 | 04/03/2019 * 04/17/2019 | 04/17/2019 * 05/15/2019 | 05/15/2019 * 06/12/2019 | 06/12/2019 * 06/26/2019 |
 |*`Defining technology for development`* *`Set architecture`* *`Import of data`* *`Screen Mocks`*|*`Beginning of development`* *`Alignment`* *`First set of working APIs`*|*`Development of more complex APIs`* *`Prod test`* *`MVP1`* *`Alignment`*|*`Project development`* *`Final project presentation (final MVP)`*|
-|:heavy_check_mark:|:heavy_check_mark:|:x:|:x:|
-
-###### more is coming up here....
+|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
